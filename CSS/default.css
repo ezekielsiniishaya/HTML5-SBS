@@ -46,7 +46,7 @@ li {
 }
 
 .header {
-	background-image: url(../images/headback.png);
+	background-image: url(../Images/headback.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -57,7 +57,7 @@ footer {
 	color: lightgreen;
 	font-family: monospace;
 	font-size: 15px;
-	background-image: url(../images/headback.png);
+	background-image: url(../Images/headback.png);
 	background-position: center;
 	background-size: cover;
 	padding: 15px;
@@ -90,7 +90,7 @@ table {
 
 body {
 	color: yellow;
-	background-image: url(../images/hoop.jpg);
+	background-image: url(../Images/hoop.jpg);
 	background-attachment: fixed;
 	font-size: 130%;
 }
