@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animating Smiling Face</title>
+        <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <canvas id="faceCanvas" width="200" height="200"></canvas>
+        <script>
+        // Get the canvas element
+        var canvas = document.getElementById( 'faceCanvas' );
+        var ctx = canvas.getContext( '2d' );
+
+        // Initial position of the mouth
+        var mouthOpening = 0.1; // Initial mouth opening angle
+        var isMouthOpening = true; // Initial animation direction
+
+        // Function to draw the face
+        function drawFace( ) {
+            // Clear the canvas
+            ctx.clearRect( 0, 0, canvas.width, canvas.height );
+
+            // Draw the face
+            ctx.beginPath( );
+            ctx.arc( 100, 100, 60, 0, Math.PI * 2 ); // Outer circle (face)
+            ctx.fillStyle = '#ffe0bd'; // Skin color
+            ctx.fill( );
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'black';
+            ctx.stroke( );
+
+            // Draw the eyes
+            ctx.beginPath( );
+            ctx.arc( 80, 80, 10, 0, Math.PI * 2 ); // Left eye
+            ctx.fillStyle = 'white'; // Eye color
+            ctx.fill( );
+            ctx.stroke( );
+
+            ctx.beginPath( );
+            ctx.arc( 120, 80, 10, 0, Math.PI * 2 ); // Right eye
+            ctx.fillStyle = 'white'; // Eye color
+            ctx.fill( );
+            ctx.stroke( );
+
+            // Draw the pupils
+            ctx.beginPath( );
+            ctx.arc( 80, 80, 4, 0, Math.PI * 2 ); // Left pupil
+            ctx.fillStyle = 'black'; // Pupil color
+            ctx.fill( );
+
+            ctx.beginPath( );
+            ctx.arc( 120, 80, 4, 0, Math.PI * 2 ); // Right pupil
+            ctx.fillStyle = 'black'; // Pupil color
+            ctx.fill( );
+
+            // Draw the nose
+            ctx.beginPath( );
+            ctx.moveTo( 100, 90 );
+            ctx.lineTo( 90, 110 );
+            ctx.lineTo( 100, 110 );
+            ctx.strokeStyle = 'black';
+            ctx.stroke( );
+
+            // Draw the mouth
+            ctx.beginPath( );
+            ctx.arc( 100, 120, 20, mouthOpening, Math.PI - mouthOpening ); // Mouth
+            ctx.lineWidth = 2;
+            ctx.stroke( );
+
+            // Draw eyebrows
+            ctx.beginPath( );
+            ctx.moveTo( 70, 70 ); // Left eyebrow start
+            ctx.lineTo( 90, 70 ); // Left eyebrow end
+            ctx.lineWidth = 3;
+            ctx.stroke( );
+
+            ctx.beginPath( );
+            ctx.moveTo( 110, 70 ); // Right eyebrow start
+            ctx.lineTo( 130, 70 ); // Right eyebrow end
+            ctx.lineWidth = 3;
+            ctx.stroke( );
+        }
+
+        // Function to animate the smile
+        function animateSmile( ) {
+            if ( isMouthOpening ) {
+                mouthOpening += 0.01;
+                if ( mouthOpening >= 0.4 ) {
+                    isMouthOpening = false;
+                }
+            } else {
+                mouthOpening -= 0.01;
+                if ( mouthOpening <= 0.1 ) {
+                    isMouthOpening = true;
+                }
+            }
+
+            // Redraw the face with the updated mouth position
+            drawFace( );
+
+            // Request animation frame to continue the animation
+            requestAnimationFrame( animateSmile );
+        }
+
+        // Start the animation
+        animateSmile( );
+
+        </script>
+    </body>
+
+</html>

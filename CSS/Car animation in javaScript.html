@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moving Car Animation</title>
+        <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <canvas id="carCanvas" width="800" height="400"></canvas>
+        <script>
+        // Get the canvas element
+        var canvas = document.getElementById( 'carCanvas' );
+        var ctx = canvas.getContext( '2d' );
+
+        // Initial position of the car
+        var carX = 50;
+        var carY = canvas.height / 2;
+        var carWidth = 120;
+        var carHeight = 50;
+        var speed = 2; // Speed of the car
+
+        // Function to draw the car
+        function drawCar( ) {
+            // Clear the canvas
+            ctx.clearRect( 0, 0, canvas.width, canvas.height );
+
+            // Draw the car body
+            ctx.fillStyle = 'blue';
+            ctx.fillRect( carX, carY - 20, carWidth, carHeight );
+            ctx.fillStyle = 'white';
+            ctx.fillRect( carX + 10, carY - 35, carWidth - 20, 20 );
+
+            // Draw the windows
+            ctx.fillStyle = 'black';
+            ctx.fillRect( carX + 20, carY - 30, 20, 15 );
+            ctx.fillRect( carX + 60, carY - 30, 40, 15 );
+
+            // Draw the wheels
+            ctx.fillStyle = 'black';
+            ctx.beginPath( );
+            ctx.arc( carX + 25, carY + 15, 12, 0, Math.PI * 2 );
+            ctx.fill( );
+            ctx.beginPath( );
+            ctx.arc( carX + carWidth - 25, carY + 15, 12, 0, Math.PI * 2 );
+            ctx.fill( );
+
+            // Draw the headlights
+            ctx.fillStyle = 'yellow';
+            ctx.beginPath( );
+            ctx.arc( carX + 12, carY - 5, 5, 0, Math.PI * 2 );
+            ctx.fill( );
+            ctx.beginPath( );
+            ctx.arc( carX + carWidth - 12, carY - 5, 5, 0, Math.PI * 2 );
+            ctx.fill( );
+        }
+
+        // Function to update the car's position and redraw
+        function updateCar( ) {
+            // Move the car
+            carX += speed;
+
+            // Check if the car has reached the end of the canvas
+            if ( carX > canvas.width + carWidth ) {
+                carX = -carWidth; // Reset the car position to the left side of the canvas
+            }
+
+            // Redraw the car
+            drawCar( );
+
+            // Request animation frame to continue the animation
+            requestAnimationFrame( updateCar );
+        }
+
+        // Start the animation
+        updateCar( );
+
+        </script>
+    </body>
+
+</html>

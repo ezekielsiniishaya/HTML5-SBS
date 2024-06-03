@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Gallery</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .image-list img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-list img:hover {
+            transform: scale(1.1);
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Image Gallery</h1>
+            <div class="image-list">
+                <a href="https://www.example.com/image1.jpg" target="_blank">
+                    <img src="https://www.example.com/image1.jpg" alt="Image 1">
+                </a>
+                <a href="https://www.example.com/image2.jpg" target="_blank">
+                    <img src="https://www.example.com/image2.jpg" alt="Image 2">
+                </a>
+                <a href="https://www.example.com/image3.jpg" target="_blank">
+                    <img src="https://www.example.com/image3.jpg" alt="Image 3">
+                </a>
+                <!-- Add more image links as needed -->
+            </div>
+        </div>
+    </body>
+
+</html>

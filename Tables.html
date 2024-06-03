@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <title>Tables</title>
+  </head>
+
+  <body>
+    <table>
+      <tr
+        class="tablehead"
+        style="background-color: orange; color: rgb(255, 251, 0);"
+      >
+        <td style="width: 100px;">Item #</td>
+        <td
+          style="
+            width: 300px;
+            color: maroon;
+            background-color: rgb(255, 251, 0);
+          "
+        >
+          Name
+        </td>
+        <td style="width: 75px;">Price</td>
+        <td style="width: 100px;">In Stock?</td>
+      </tr>
+      <tr>
+        <td>CH543295</td>
+        <td>Vickers and Vickers Fertilizer Sticks</td>
+        <td>$5.98</td>
+        <td>Yes</td>
+      </tr>
+      <tr class="tablebody" style="background-color: palegreen;">
+        <td>CH548571</td>
+        <td>Appleton Acres Big Sack of Bulbs, Daffodils</td>
+        <td>$22.50</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>CH548573</td>
+        <td>Appleton Acres Big Sack of Bulbs, Crocuses</td>
+        <td>$22.50</td>
+        <td>No</td>
+      </tr>
+      <tr class="tablebody" style="background-color: palegreen;">
+        <td>CH548577</td>
+        <td>Easton Create-Your-Own Paving Stones Kit</td>
+        <td>$32.99</td>
+        <td>Yes</td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td>CH348471</td>
+        <td>Sampson & Company All-Natural Pesticide</td>
+        <td>$14.99</td>
+        <td>Yes</td>
+      </tr>
+      <tr class="tablebody" style="background-color: palegreen;">
+        <td colspan="3">Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+      <tr>
+        <td colspan="2" td>Cell 3</td>
+        <td colspan="2">Cell 3+</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="tablebody" style="background-color: palegreen;">
+          Cell 4
+        </td>
+        <td>Cell 5</td>
+      </tr>
+      <tr>
+        <td
+          colspan="4"
+          class="tablehead"
+          style="
+            background-image: url(../images/hoop.jpg);
+            color: white;
+            padding: 20px;
+          "
+          align=""
+          valign="top"
+        >
+          <b>Note: </b>In-stock items are available for pick-up or delivery.
+          Please visit our store for special sale prices on some items.
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Tables</title>
+    <style>
+        body {
+            color: whitesmoke;
+            background-color: rgb(34, 34, 34);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <form method="post" enctype="text/plain" action="mailto:ezekielsiniishaya@gmail.com">
+
+            <tr><input type="date"></tr>
+            <tr>
+                <td colspan="2"> Favourite Color:
+                    <select name="colors" size="1">
+                        <option>Red</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Yellow</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Black</option>
+                        <option>Teal</option>
+                        <option>Beige</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Select your printer model:
+                    <select name="printers" size="1">
+                        <optgroup label="Inkjet">
+                            <option>SuperJet 1400</option>
+                            <option>SuperJet 1405</option>
+                            <option>SuperJet 1405 Plus</option>
+                        </optgroup>
+                        <optgroup label="Laser">
+                            <option>SuperLaser Value Edition</option>
+                            <option>SuperLaser Pro</option>
+                            <option>SuperLaser Plus</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <colgroup align="right" valign="top">
+                    <td>Name:</td>
+                    <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>E-mail address:</td>
+                <td><input type="email" name="email" size="30" maxlength="100" placeholder="Enter your e-mail address">
+                </td>
+            <tr>
+                <td>Comments:</td>
+                <td><textarea name="comments" rows="6" cols="50" placeholder="Enter comments here"></textarea></td>
+            </tr>
+            <tr>
+                <td>Level :</td>
+                <td>
+                    <input type="radio" name="level" value="Beginner">Beginner<br>
+                    <input type="radio" name="level" value="Intermediate">Intermediate<br>
+                    <input type="radio" name="level" value="Expert">Expert<br>
+                    <input type="radio" name="level" value="Pro">Professional<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Copies:<input type="number" name="copies" min="0" max="100" step="1" value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Range:<input type="range" name="range" min="0" max="10" step="1" value="0"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" name="partner" value="Yes" checked="checked">Yes, I would also like to
+                    receive coupons and offers from other gardening-related companies.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit">&nbsp
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </form>
+    </table>
+    <details>
+        <summary>Guess what I am about to Write
+        </summary>
+        <p>I am about to write nothing actually!!</p>
+    </details>
+    <br>
+    <table border="1">
+        <caption>My Table</caption>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+        </tr>
+    </table>
+</body>
+
+</html>
